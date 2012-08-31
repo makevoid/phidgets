@@ -1,0 +1,18 @@
+%html
+  %head
+    %title DiscountCard
+    %link{ rel: "stylesheet", href: "/css/main.css" }
+  %body
+    #container
+      %header
+        %h1 DiscountCard
+      %nav
+        - link_to "Use Card",         "/"
+        - link_to "Users",            "/users"
+        - link_to "Register a User",  "/users/new"
+      %aside
+        %p
+          Logged in as
+          %a{ href: "" } Playground
+      %section.content= yield
+    %script{ type: "text/javascript", src: "/js/app.js" }
