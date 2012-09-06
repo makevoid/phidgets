@@ -9,12 +9,15 @@ Phidgets::RFID.new do |rfid|
   while true do
 
     rfid.on_tag do |device, tag, obj|
-      rfid.led = !rfid.led if tag.join == "0107c3b1b8"
       puts "#{tag.join}"
+      rfid.led = !rfid.led
     end
 
     rfid.on_tag_lost do |device, tag, obj|
       puts "Tag lost: #{tag.join}"
+      # rfid.led = true
+      # sleep 1
+      # rfid.led = false
     end
 
     sleep 1
